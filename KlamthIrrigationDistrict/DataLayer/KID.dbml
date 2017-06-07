@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KIDTEMPLATE" Class="KIDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Function Name="dbo.sp_Cusomters_InsertUpdate" Method="sp_Cusomters_InsertUpdate">
+    <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CustomerFirstName" Parameter="customerFirstName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CustomerLastName" Parameter="customerLastName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address1" Parameter="address1" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Address2" Parameter="address2" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CustomerPhoneNumber" Parameter="customerPhoneNumber" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="CustomerEmail" Parameter="customerEmail" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CustomerHistory_GetList" Method="sp_CustomerHistory_GetList">
+    <ElementType Name="sp_CustomerHistory_GetListResult">
+      <Column Name="CustomerHistoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="WaterUsage" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_CustomerRequest_CreateDelete" Method="sp_CustomerRequest_CreateDelete">
+    <Parameter Name="WaterAmount" Parameter="waterAmount" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="WaterOnDate" Parameter="waterOnDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="WaterOffDate" Parameter="waterOffDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Comments" Parameter="comments" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CustomerRequest_SetWaterTImes" Method="sp_CustomerRequest_SetWaterTImes">
+    <Parameter Name="WaterOn" Parameter="waterOn" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="WaterOff" Parameter="waterOff" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

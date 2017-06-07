@@ -1,0 +1,24 @@
+﻿@using KlamthIrrigationDistrict.DataLayer.DataModels
+@model DitchRider
+
+@using (Html.BeginForm())
+{
+    //DitchRider ID
+    @Html.HiddenFor(m => m.DitchRiderID)
+
+    //DitchRiderFirstName
+    @Html.LabelFor(m => m.DitchRiderFirstName)
+    @Html.TextBoxFor(m => m.DitchRiderFirstname)
+    @Html.ValidationMessageFor(m => m.DitchRIderFirstName)
+
+    //DitchRiderLastName
+    @Html.LabelFor<>(m => m.DitchRiderLastName)
+    @Html.TextBoxFor(mbox => m.DitchRiderLastName)
+    @Html.ValidationMessageFor(m => m.DitchRiderLastName)
+
+    @*DitchRiderPhoneNumber*@
+    @Html.LabelFor(m => m.DitchRiderPhoneNumber)
+    @Html.TextBoxFor(m => m.DitchRiderPhoneNumber)
+    @Html.ValidationMessageFor(mbox => m.DitchRIderPhoneNumber)
+
+}
