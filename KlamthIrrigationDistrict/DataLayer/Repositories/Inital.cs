@@ -8,5 +8,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
     public class Inital
     {
 
+
+
     }
 }
