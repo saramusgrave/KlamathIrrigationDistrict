@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Styles/Styles.css" />
+    @RenderSection("PageHead", false)
+</head>
+<body>
+    <div id="Menu">
+        <header><h1>@ViewBag.Heading</h1></header>
+        <div>
+            @RenderBody()
+        </div>
+        <ul>
+            <li class="dropdown">
+                <a href="#Customers" class="dropbtn">Customers</a>
+                <div class="dropdown-content">
+                    <a href="~/Views/CustomerHistory/HistoryList.cshtml">Customer History</a>
+                    <a href="~/Views/CustomerRequest/AddRequest.cshtml">Customer Request</a>
+                </div>
+                <a href="#DitchRiders" class="dropbtn">Ditch Rider</a>
+                <div class="dropdown-content">
+                    <a href="~/Views/DitchRider/EditRequest.cshtml">Edit Request</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

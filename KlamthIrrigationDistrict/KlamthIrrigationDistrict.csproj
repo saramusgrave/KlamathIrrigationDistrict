@@ -263,6 +263,8 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Styles\Heading.css" />
+    <Content Include="Styles\Styles.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -274,7 +276,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -299,7 +300,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\CustomerHistory\Index.cshtml" />
     <Content Include="Views\CustomerRequest\Index.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
@@ -307,6 +307,11 @@
     <Content Include="Views\CustomerRequest\AddRequest.cshtml" />
     <Content Include="Views\CustomerHistory\HistoryList.cshtml" />
     <Content Include="Views\DitchRider\EditRequest.cshtml" />
+    <Content Include="Views\Login\index.cshtml" />
+    <Content Include="Views\Login\In.cshtml" />
+    <Content Include="Views\Login\Out.cshtml" />
+    <Content Include="Views\Customers\Customers.cshtml" />
+    <Content Include="Views\Shared\KIDLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

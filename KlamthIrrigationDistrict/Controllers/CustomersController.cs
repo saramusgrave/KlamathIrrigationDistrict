@@ -25,7 +25,7 @@ namespace KlamthIrrigationDistrict.Controllers
         {
             ViewBag.Title = "Klamath Irrigation District";
             ViewBag.Header = "KID Customers";
-            return View(_custRepo.GetList());
+            return View(_custRepo);
         }
         [HttpGet]
         public ActionResult Add()

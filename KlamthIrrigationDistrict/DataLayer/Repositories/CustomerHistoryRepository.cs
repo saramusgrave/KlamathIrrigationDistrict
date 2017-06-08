@@ -5,11 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using System.Collections.Generic;
 using KlamthIrrigationDistrict.DataLayer.Interfaces;
 using KlamthIrrigationDistrict.DataLayer.DataModels;
-using System.Data.SqlClient;
-using System.Configuration;
 using KlamthIrrigationDistrict.Controllers;
 
 namespace KlamthIrrigationDistrict.DataLayer.Repositories

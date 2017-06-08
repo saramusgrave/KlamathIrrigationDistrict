@@ -46,39 +46,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
             }
             return (c);
         }
-        public virtual List<Customers> GetList()
-        {
-            List<Customers> CustomerList = new List<Customers>();
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["KIDTEMPLATE"].ConnectionString))
-            {
-                using (SqlCommand command = new SqlCommand())
-                {
-                    command.Connection = connection;
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "sp_Customers_InsertUpdate";
-                    connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            Customers c = new Customers();
-                            c.CustomerID = int.Parse(reader["CustomerID"].ToString());
-                            c.CustomerFirstName = reader["CustomerFirstName"].ToString();
-                            c.CustomerLastName = reader["CustomerLastName"].ToString();
-                            c.Address1 = reader["Address1"].ToString();
-                            c.Address2 = reader["Address2"].ToString();
-                            c.City = reader["City"].ToString();
-                            c.State = reader["State"].ToString();
-                            c.Zip = reader["Zip"].ToString();
-                            c.CustomerPhoneNumber = reader["CustomerPhoneNumber"].ToString();
-                            c.CustomerEmail = reader["CustomerEmail"].ToString();
-                            CustomerList.Add(c);
-                       }
-                    }
-                }
-            }
-            return CustomerList;
-        }
+       
         public virtual void Save(Customers customers)
         {
             Customers c = null;

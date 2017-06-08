@@ -11,7 +11,6 @@ namespace KlamthIrrigationDistrict.DataLayer.Interfaces
    public interface ICustomersRepository
     {
         Customers Get(int id);
-        List<Customers> GetList();
         void Save(Customers customers);
     }
 }
