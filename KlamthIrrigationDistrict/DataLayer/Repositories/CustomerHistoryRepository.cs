@@ -35,8 +35,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
                             ch.WaterUsage = decimal.Parse(reader["WaterUsage"].ToString());
                             HistoryList.Add(ch);
                         }
-                    }
-                    
+                    }                    
                 }
             }
             return HistoryList;
