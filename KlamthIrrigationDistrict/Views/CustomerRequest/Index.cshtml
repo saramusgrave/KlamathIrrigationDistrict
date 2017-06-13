@@ -1,17 +1,33 @@
-﻿@{
-    Layout = null;
-}
+﻿@using KlamthIrrigationDistrict.DataLayer.DataModels
+@model List<CustomerRequest>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>
+<table>
+    @Html.ActionLink("Add Request", "Add", "Request")
+    <tr>
+        <th>CustomerID:</th>
+        <th>CustomerName:</th>
+        <th>Water Amount:</th>
+        <th>Water On Date:</th>
+        <th>Water Off Date:</th>
+        <th>Comments:</th>
+        <th>Ditch RiderID:</th>
+        <th>Water On:</th>
+        <th>Water Off:</th>
+    </tr>
+    @foreach (var request in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink("Edit Request", "Edit","Request")</td>
+            <td>@request.CustomerID</td>
+            <td>@request.CustomerFirstName @request.CustomerLastName</td>
+            <td>@request.WaterAmount</td>
+            <td>@request.WaterOnDate</td>
+            <td>@request.WaterOffDate</td>
+            <td>@request.Comments</td>
+            <td>@request.DitchRiderID</td>
+            <td>@request.WaterOn</td>
+            <td>@request.WaterOff</td>
+        </tr>
+    }
+</table>
+@Html.Partial("_RequestList")

@@ -1,29 +1,40 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>@ViewBag.Title</title>
+    <title>KID</title>
     <link rel="stylesheet" href="~/Styles/Styles.css" />
     @RenderSection("PageHead", false)
 </head>
 <body>
     <div id="Menu">
-        <header><h1>@ViewBag.Heading</h1></header>
-        <div>
-            @RenderBody()
-        </div>
-        <ul>
+        <header><h1>Klamath Irrigation District: Water Usage Tracking System</h1></header>
+        <ul class="List">
             <li class="dropdown">
                 <a href="#Customers" class="dropbtn">Customers</a>
                 <div class="dropdown-content">
                     <a href="~/Views/CustomerHistory/HistoryList.cshtml">Customer History</a>
                     <a href="~/Views/CustomerRequest/AddRequest.cshtml">Customer Request</a>
-                </div>
-                <a href="#DitchRiders" class="dropbtn">Ditch Rider</a>
-                <div class="dropdown-content">
+                    </div>
+            </li>
+            <li class="dropdown2">
+                <a href="#DitchRiders" class="dropbtn2">Ditch Rider</a>
+                <div class="dropdown-content2">
                     <a href="~/Views/DitchRider/EditRequest.cshtml">Edit Request</a>
                 </div>
+                @*<input type="text" name="Search" placeholder="Search For Customer or Ditch Rider" />
+                <button>Search</button>*@
+            </li>
+            <li class="SearchBox">
+                <input type="text" name="Search" placeholder="Search For Customer or Ditch Rider" />
+                <button>Search</button>
             </li>
         </ul>
     </div>
+    <div>
+        @RenderBody()
+    </div>
 </body>
 </html>
+<footer>
+    <img src="~/Images/KID.png"/>
+</footer>

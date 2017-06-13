@@ -1,17 +1,19 @@
-﻿@{
-    Layout = null;
-}
+﻿@using KlamthIrrigationDistrict.DataLayer.DataModels
+@model CustomerHistory
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.CustomerHistoryID)
     <div>
-    
+        @Html.LabelFor(m =>m.CustomerID)
+        @Html.DisplayFor(m =>m.CustomerID)
     </div>
-</body>
-</html>
+    <div>
+        @Html.LabelFor(m => m.Date)
+        @Html.DisplayFor(m =>m.Date)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.WaterUsage)
+        @Html.DisplayFor(m =>m.WaterUsage)
+    </div>
+}

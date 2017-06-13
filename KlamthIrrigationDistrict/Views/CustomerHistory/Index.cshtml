@@ -1,17 +1,17 @@
-﻿@{
-    Layout = null;
-}
+﻿@using KlamthIrrigationDistrict.DataLayer.DataModels
+@model List<CustomerHistory>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>
+<table>
+    <tr>
+        <th>CustomerID:</th>
+        <th>Date:</th>
+        <th>WaterUsage:</th>
+    </tr>
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td>@customer.Date</td>
+            <td>@customer.WaterUsage</td>
+        </tr>
+    }
+</table>

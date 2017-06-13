@@ -1,17 +1,20 @@
-﻿@{
-    Layout = null;
+﻿@using KlamthIrrigationDistrict.DataLayer.DataModels
+@model DitchRider
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <th>Ditch RiderID:</th>
+            <th>Ditch Rider Name:</th>
+            <th>Ditch Rider Phone Number:</th>
+        </tr>
+        @foreach(var rider in Model)
+        {
+            <tr>
+                <td>@rider.RiderID</td>
+                <td>@rider.RiderFirstName @rider.RiderLastname</td>
+                <td>@rider.RiderPhoneNumber</td>
+            </tr>
+        }
+    </table>
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>

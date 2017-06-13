@@ -37,8 +37,6 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
             }
             return (cr);
         }
-
-
         public virtual CustomerRequest SetWaterTImes(CustomerRequest water)
         {
             CustomerRequest cr = null;

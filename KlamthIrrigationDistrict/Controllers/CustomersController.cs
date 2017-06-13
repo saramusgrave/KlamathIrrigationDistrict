@@ -14,7 +14,6 @@ namespace KlamthIrrigationDistrict.Controllers
     public class CustomersController : Controller
     {
         private ICustomersRepository _custRepo;
-
         public CustomersController()
         {
             _custRepo = new CustomersRepository();
@@ -74,7 +73,6 @@ namespace KlamthIrrigationDistrict.Controllers
                 Zip = customers.Zip,
                 CustomerPhoneNumber = customers.CustomerPhoneNumber,
                 CustomerEmail = customers.CustomerEmail,
-
             };
             return ViewCustomers(id);
         }

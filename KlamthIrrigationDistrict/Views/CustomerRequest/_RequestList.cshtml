@@ -1,0 +1,15 @@
+﻿@using KlamthIrrigationDistrict.DataLayer.DataModels
+@model List<CustomerRequest>
+
+<ul>
+    @foreach (var request in Model)
+    {
+        <li><img src="~/Images/KID.png" alt="KID"/>
+            <div>@request.CustomerFirstName @request.CustomerLastName</div>
+            <div>@request.WaterAmount</div>
+            <div>@request.WaterOnDate</div>
+            <div>@request.WaterOffDate</div>
+            <div>@request.Comments</div>
+        </li>
+    }
+</ul>
