@@ -13,7 +13,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
 {
     public class CustomerRequestRepository : ICustomerRequestRepository
     {
-        public virtual List<CustomerRequest> GetList()
+        public virtual  List<CustomerRequest> GetList()
         {
             List<CustomerRequest> RequestList = new List<CustomerRequest>();
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"KIDTEMPLATE"].ConnectionString))
@@ -26,7 +26,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
                             CustomerRequest cr = new CustomerRequest();
                             cr.RequestID = int.Parse(reader["RequestID"].ToString());
@@ -47,18 +47,22 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
             }
             return (RequestList);
         }
-        public CustomerRequest CreateDelete()
+        public virtual CustomerRequest CreateDelete()
         {
-            CustomerRequest cr = null;
+            CustomerRequest cr = new CustomerRequest();
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"KIDTIMEPLATE"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "sp_CustomerRequest_CreateDelete";
-                    connection.Open();
-                    command.CommandText = "UPDATE CustomerRequest SET CustomerFirstName = @CustomerFirstName, CustomerLastName = @CustomerLastName, WaterAmount = @WaterAmount, WaterOnDate = @WaterOnDate, WaterOffDate= @WaterOffDate, Comments = @Comments";
+                    //command.CommandType = CommandType.StoredProcedure;
+                    //command.CommandText = "sp_CustomerRequest_CreateDelete";
+                    command.CommandText = @"INSERT INTO CustomerRequest (CustomerFirstName, CustomerLastName, WaterAmount, WaterOnDate,WaterOffDate,Comments) VALUES(@CustomerFirstName, @CustomerLastName, @WaterAmount,@WaterOnDate,@WaterOffDate,@Comments)";
+                    command.CommandType = CommandType.Text;
+                    if(cr.RequestID != 0)
+                    {
+                        command.Parameters.AddWithValue(@"RequestID",cr.RequestID);
+                    }
                     command.Parameters.AddWithValue("@CustomerFirstname", cr.CustomerFirstName);
                     command.Parameters.AddWithValue("@CustomerLastname", cr.CustomerLastName);
                     command.Parameters.AddWithValue("@WaterAmount", cr.WaterAmount);
@@ -99,10 +103,9 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
             }
             return water;
         }
-
         public virtual void Save(CustomerRequest request)
         {
-            CustomerRequest cr = null;
+            //CustomerRequest cr = null;
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["KIDTEMPLATE"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())

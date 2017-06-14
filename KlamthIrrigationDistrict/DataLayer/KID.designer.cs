@@ -32,6 +32,12 @@ namespace KlamthIrrigationDistrict.DataLayer
     partial void OnCreated();
     #endregion
 		
+		public KIDDataContext() : 
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["KIDTEMPLATEConnectionString"].ConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
+		
 		public KIDDataContext(string connection) : 
 				base(connection, mappingSource)
 		{

@@ -26,7 +26,6 @@ namespace KlamthIrrigationDistrict.Controllers
         {
             return View(new CustomerRequest());
         }
-
         [HttpGet]
         public ActionResult Edit()
         {
@@ -43,7 +42,6 @@ namespace KlamthIrrigationDistrict.Controllers
             _requestRepo.SetWaterTImes(water);
             return RedirectToAction("Index");
         }
-
         //Save
         [HttpPost]
         public ActionResult Edit(CustomerRequest request)

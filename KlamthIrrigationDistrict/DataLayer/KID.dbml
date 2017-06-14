@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KIDTEMPLATE" Class="KIDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SARAMUSGRAVE;Initial Catalog=KIDTEMPLATE;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="KIDTEMPLATEConnectionString" Provider="System.Data.SqlClient" />
   <Function Name="dbo.sp_Cusomters_InsertUpdate" Method="sp_Cusomters_InsertUpdate">
     <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
     <Parameter Name="CustomerFirstName" Parameter="customerFirstName" Type="System.String" DbType="VarChar(50)" />

@@ -1,5 +1,8 @@
 ﻿@using KlamthIrrigationDistrict.DataLayer.DataModels
 @using KlamthIrrigationDistrict.Models
+@{ 
+    Layout = "~/Views/Shared/KIDLayout.cshtml";
+}
 @model CustomerRequest
 
 @using (Html.BeginForm())
@@ -11,63 +14,54 @@
         @Html.TextBoxFor(m => m.CustomerID)
         @Html.ValidationMessageFor(m =>m.CustomerID)
     </div>
-
     <div>
         @*CustomerFirstName*@
         @Html.LabelFor(m => m.CustomerFirstName)
         @Html.TextBoxFor(m => m.CustomerFirstName)
         @Html.ValidationMessageFor(m => m.CustomerFirstName)
     </div>
-
     <div>
         @*CustomerLastName*@
         @Html.LabelFor(m => m.CustomerLastName)
         @Html.TextBoxFor(m => m.CustomerLastName)
         @Html.ValidationMessageFor(m => m.CustomerLastName)
     </div>
-
     <div>
         @*WaterAmount*@
         @Html.LabelFor(m => m.WaterAmount)
         @Html.TextBoxFor(m => m.WaterAmount)
         @Html.ValidationMessageFor(m => m.WaterAmount)
     </div>
-
     <div>
         @*WaterOnDate*@
         @Html.LabelFor(m => m.WaterOnDate)
         @Html.TextBoxFor(m => m.WaterOnDate)
         @Html.ValidationMessageFor(m => m.WaterOnDate)
     </div>
-
     <div>
         @*@WaterOffDate*@
         @Html.LabelFor(m => m.WaterOffDate)
         @Html.TextBoxFor(m => m.WaterOffDate)
         @Html.ValidationMessageFor(m => m.WaterOffDate)
     </div>
-
     <div>
         @*Comments*@
         @Html.LabelFor(m => m.Comments)
         @Html.TextBoxFor(m => m.Comments)
         @Html.ValidationMessageFor(m => m.Comments)
     </div>
-
     <div>
         @*DitchRiderID*@
         @Html.LabelFor(m => m.DitchRiderID)
         @Html.TextBoxFor(m => m.DitchRiderID)
         @Html.ValidationMessageFor(m => m.DitchRiderID)
     </div>
-
     <div>
         @*WaterOn*@
         @Html.LabelFor(m => m.WaterOn)
         @Html.TextBoxFor(m => m.WaterOn)
         @Html.ValidationMessageFor(m => m.WaterOn)
     </div>
-
     <div>
         @*WaterOff*@
         @Html.LabelFor(m => m.WaterOff)

@@ -9,7 +9,7 @@ namespace KlamthIrrigationDistrict.DataLayer.DataModels
     {
         public int DitchRiderID { get; set; }
         public string DitchRiderFirstName { get; set; }
-        public string DitchRiderLastname { get; set; }
+        public string DitchRiderLastName { get; set; }
         public int DitchRiderPhoneNumber { get; set; }
     }
 }

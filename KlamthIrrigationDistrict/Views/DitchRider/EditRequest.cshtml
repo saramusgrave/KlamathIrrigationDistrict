@@ -5,27 +5,23 @@
 {
     //DitchRider ID
     @Html.HiddenFor(m => m.DitchRiderID)
-
     <div>
      @*DitchRiderFirstName*@
     @Html.LabelFor(m => m.DitchRiderFirstName)
     @Html.TextBoxFor(m => m.DitchRiderFirstName)
     @Html.ValidationMessageFor(m => m.DitchRiderFirstName)
     </div>
-
     <div>
     @*DitchRiderLastname*@
     @Html.LabelFor(m => m.DitchRiderLastname)
     @Html.TextBoxFor(m => m.DitchRiderLastname)
     @Html.ValidationMessageFor(m => m.DitchRiderLastname)
     </div>
-
     <div>
     @*DitchRiderPhoneNumber*@
     @Html.LabelFor(m => m.DitchRiderPhoneNumber)
     @Html.TextBoxFor(m => m.DitchRiderPhoneNumber)
     @Html.ValidationMessageFor(m => m.DitchRiderPhoneNumber)
     </div>
-
     <input type="submit" value="Submit"/>
 }

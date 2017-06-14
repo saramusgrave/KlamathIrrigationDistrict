@@ -13,8 +13,6 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
 {
     public class CustomersRepository : ICustomersRepository
     {
-       
-            
         public virtual Customers Get(int id)
         {
             Customers c = null;
@@ -48,10 +46,9 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
             }
             return (c);
         }
-       
         public virtual void Save(Customers customers)
         {
-            Customers c = null;
+            //Customers c = null;
             using (SqlConnection conneciton = new SqlConnection(ConfigurationManager.ConnectionStrings[@"KIDTEMPLATE"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
@@ -65,8 +62,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
                     }
                     command.Parameters.AddWithValue("@CustomerFirstName", customers.CustomerFirstName);
                     command.Parameters.AddWithValue("@CustomerLastName", customers.CustomerLastName);
-                    command.Parameters.AddWithValue
-                        ("@Address1", customers.Address1);
+                    command.Parameters.AddWithValue("@Address1", customers.Address1);
                     command.Parameters.AddWithValue("@Address2", customers.Address2);
                     command.Parameters.AddWithValue("@City", customers.City);
                     command.Parameters.AddWithValue("@State", customers.State);

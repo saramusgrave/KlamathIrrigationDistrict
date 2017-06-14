@@ -6,7 +6,6 @@
 <table class="CustomerRequest">
     <thead>
     <tr class="CR">
-        @*<th>Edit:</th>*@
         <th>CustomerID:</th>
         <th>CustomerName:</th>
         <th>Water Amount:</th>
@@ -17,12 +16,11 @@
         <th>Water On:</th>
         <th>Water Off:</th>
     </tr>
-        </thead>
-    <tbody>
+    </thead>
+<tbody>
     @foreach (var request in Model)
     {
         <tr class="CR">
-            @*<td>@Html.ActionLink("Edit", "Edit","Request")</td>*@
             <td>@request.CustomerID</td>
             <td>@request.CustomerFirstName @request.CustomerLastName</td>
             <td>@request.WaterAmount</td>
@@ -34,6 +32,6 @@
             <td>@request.WaterOff</td>
         </tr>
     }
-        </tbody>
+</tbody>
 </table>
 @Html.Partial("_RequestList")

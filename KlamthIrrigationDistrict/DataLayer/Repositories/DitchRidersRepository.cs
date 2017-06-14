@@ -26,12 +26,12 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
                     connection.Open();
                     using(SqlDataReader reader = command.ExecuteReader())
                     {
-                        if(reader.Read())
+                        while(reader.Read())
                         {
                             dr = new DitchRider();
                             dr.DitchRiderID = int.Parse(reader["DitchRiderID"].ToString());
                             dr.DitchRiderFirstName = reader["DitchRiderFirstName"].ToString();
-                            dr.DitchRiderLastname = reader["DitchRiderLastname"].ToString();
+                            dr.DitchRiderLastName = reader["DitchRiderLastName"].ToString();
                             dr.DitchRiderPhoneNumber = int.Parse(reader["DitchRiderPhoneNumber"].ToString());
                         }
                     }
@@ -54,7 +54,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
                         command.Parameters.AddWithValue("@DitchRiderID", rider.DitchRiderID);
                     }
                     command.Parameters.AddWithValue("@DitchRiderFirstName", rider.DitchRiderFirstName);
-                    command.Parameters.AddWithValue("@DitchRiderLastname", rider.DitchRiderLastname);
+                    command.Parameters.AddWithValue("@DitchRiderLastName", rider.DitchRiderLastName);
                     command.Parameters.AddWithValue("@DitchRiderPhoneNumber", rider.DitchRiderPhoneNumber);
                     connection.Open();
                     command.ExecuteNonQuery();
