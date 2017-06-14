@@ -17,17 +17,23 @@ namespace KlamthIrrigationDistrict.Controllers
         }
         //Main index, CreateDelete
         [HttpGet]
+        public ActionResult Index()
+        {
+            return View(_requestRepo.GetList());
+        }
+        [HttpGet]
         public ActionResult Add()
         {
-            return View(_requestRepo.CreateDelete());
+            return View(new CustomerRequest());
         }
 
         [HttpGet]
         public ActionResult Edit()
         {
-            return View(_requestRepo.CreateDelete());
+            CustomerRequest request = _requestRepo.CreateDelete();
+            return View(request);
         }
-        [HttpGet]
+        [HttpPost]
         public ActionResult Add(CustomerRequest water)
         {
             if(!ModelState.IsValid)
@@ -39,8 +45,8 @@ namespace KlamthIrrigationDistrict.Controllers
         }
 
         //Save
-        [HttpGet]
-        public ActionResult Save(CustomerRequest request)
+        [HttpPost]
+        public ActionResult Edit(CustomerRequest request)
         {
             if(!ModelState.IsValid)
             {

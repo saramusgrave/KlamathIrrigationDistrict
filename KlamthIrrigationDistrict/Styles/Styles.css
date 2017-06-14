@@ -6,11 +6,11 @@
 }
 .List {
     list-style-type: none;
-    margin: 0;
+    margin: 10px;
     padding: 0;
     overflow: auto;
     background-color: lightblue;
-    width: 100%;
+    width: inherit;
 }
 /*DropDown for Customers*/
 .dropdown {
@@ -99,9 +99,50 @@ button{
     padding: .5px;
 
 }
+/*CustomerRequest */
+table{
+    float: left;
+    text-align: justify;
+    width: inherit;
+    border: 5px solid;
+    padding-left: 5px;
+    margin-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-wrap: unset;
+}
+tr{
+    padding: 10px;
+    border: 5px solid green;
+}
+th{
+    border:1px;
+    border-bottom: .5px solid blue;
+    border-left: .5px solid blue;
+}
+thead{
+    color: darkblue;
+}
+tbody{
+    border: solid;
+    border-color: pink;
+    color: black;
+}
+td{
+    text-align: center;
+    border-bottom: .5px solid blue;
+}
+label{
+    width: 100%;
+    display: inline-block;
+}
 /*footer*/
 footer{
-    float: left;
+    position: fixed;
+    left: 0;
+    bottom: 0;
     border: 10px solid;
-    padding: 10px;
+    padding: 5px;
+    margin: 5px;
+    
 }

@@ -1,10 +1,10 @@
 ﻿@using KlamthIrrigationDistrict.DataLayer.DataModels
 @model List<CustomerRequest>
 
-<ul>
+@*<ul>
     @foreach (var request in Model)
     {
-        <li><img src="~/Images/KID.png" alt="KID"/>
+        <li <img src="~/Images/KID.png" alt="KID"/>
             <div>@request.CustomerFirstName @request.CustomerLastName</div>
             <div>@request.WaterAmount</div>
             <div>@request.WaterOnDate</div>
@@ -12,4 +12,4 @@
             <div>@request.Comments</div>
         </li>
     }
-</ul>
+</ul>*@

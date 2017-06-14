@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
 
 namespace KlamthIrrigationDistrict.DataLayer.DataModels
 {
@@ -9,6 +11,7 @@ namespace KlamthIrrigationDistrict.DataLayer.DataModels
     {
         public int RequestID { get; set; }
         public int CustomerID { get; set; }
+        [Required]
         public string CustomerFirstName { get; set; }
         public string CustomerLastName { get; set; }
         public decimal WaterAmount { get; set; }

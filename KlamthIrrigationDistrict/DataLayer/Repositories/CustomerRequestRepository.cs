@@ -13,6 +13,40 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
 {
     public class CustomerRequestRepository : ICustomerRequestRepository
     {
+        public virtual List<CustomerRequest> GetList()
+        {
+            List<CustomerRequest> RequestList = new List<CustomerRequest>();
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"KIDTEMPLATE"].ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "SELECT * FROM CustomerRequest";
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            CustomerRequest cr = new CustomerRequest();
+                            cr.RequestID = int.Parse(reader["RequestID"].ToString());
+                            cr.CustomerID = int.Parse(reader["CustomerID"].ToString());
+                            cr.CustomerFirstName = reader["CustomerFirstName"].ToString();
+                            cr.CustomerLastName = reader["CustomerLastName"].ToString();
+                            cr.WaterAmount = int.Parse(reader["WaterAmount"].ToString());
+                            cr.WaterOnDate = DateTime.Parse(reader["WaterOnDate"].ToString());
+                            cr.WaterOffDate = DateTime.Parse(reader["WaterOffDate"].ToString());
+                            cr.Comments = reader["Comments"].ToString();
+                            cr.DitchRiderID = int.Parse(reader["DitchRiderID"].ToString());
+                            cr.WaterOn = DateTime.Parse(reader["WaterOn"].ToString());
+                            cr.WaterOff = DateTime.Parse(reader["WaterOff"].ToString());
+                            RequestList.Add(cr);
+                        }
+                    }
+                }
+            }
+            return (RequestList);
+        }
         public CustomerRequest CreateDelete()
         {
             CustomerRequest cr = null;

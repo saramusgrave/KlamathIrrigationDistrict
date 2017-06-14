@@ -11,6 +11,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Interfaces
     public interface ICustomerRequestRepository
     {
         CustomerRequest CreateDelete();
+        List<CustomerRequest> GetList();
         CustomerRequest SetWaterTImes(CustomerRequest water );
         void Save(CustomerRequest request);
     }

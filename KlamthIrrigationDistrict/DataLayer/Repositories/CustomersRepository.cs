@@ -13,6 +13,8 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
 {
     public class CustomersRepository : ICustomersRepository
     {
+       
+            
         public virtual Customers Get(int id)
         {
             Customers c = null;
@@ -50,7 +52,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
         public virtual void Save(Customers customers)
         {
             Customers c = null;
-            using (SqlConnection conneciton = new SqlConnection(ConfigurationManager.ConnectionStrings["KIDTEMPLATE"].ConnectionString))
+            using (SqlConnection conneciton = new SqlConnection(ConfigurationManager.ConnectionStrings[@"KIDTEMPLATE"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
