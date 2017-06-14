@@ -1,8 +1,8 @@
 ﻿@using KlamthIrrigationDistrict.DataLayer.DataModels
 @model List<CustomerRequest>
-<div>
-@Html.ActionLink("Add","AddRequest")
-    </div>
+@*<div>
+@Html.ActionLink("Add Water Request","AddRequest")
+    </div>*@
 <table class="CustomerRequest">
     <thead>
     <tr class="CR">
@@ -22,7 +22,7 @@
     {
         <tr class="CR">
             <td>@request.CustomerID</td>
-            <td>@request.CustomerFirstName @request.CustomerLastName</td>
+            <td>@request.CustomerFirstName, @request.CustomerLastName</td>
             <td>@request.WaterAmount</td>
             <td>@request.WaterOnDate</td>
             <td>@request.WaterOffDate</td>

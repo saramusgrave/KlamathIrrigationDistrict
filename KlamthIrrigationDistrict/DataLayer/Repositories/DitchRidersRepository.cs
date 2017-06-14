@@ -32,17 +32,43 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
                             dr.DitchRiderID = int.Parse(reader["DitchRiderID"].ToString());
                             dr.DitchRiderFirstName = reader["DitchRiderFirstName"].ToString();
                             dr.DitchRiderLastName = reader["DitchRiderLastName"].ToString();
-                            dr.DitchRiderPhoneNumber = int.Parse(reader["DitchRiderPhoneNumber"].ToString());
+                            dr.DitchRiderPhoneNumber = reader["DitchRiderPhoneNumber"].ToString();
                         }
                     }
                 }
             }
             return (dr);
         }
-
+        public List<DitchRider> GetList()
+        {
+            List<DitchRider> riderList = new List<DitchRider>();
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"KIDTEMPLATE"].ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "SELECT * FROM DitchRider";
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                        while (reader.Read())
+                        {
+                            DitchRider dr = new DitchRider();
+                            dr.DitchRiderID = int.Parse(reader["DithRiderID"].ToString());
+                            dr.DitchRiderFirstName = reader["DitchRiderFirstName"].ToString();
+                            dr.DitchRiderLastName = reader["DitchRiderLastName"].ToString();
+                            dr.DitchRiderPhoneNumber = reader["DitchRiderPhoneNumber"].ToString();
+                            riderList.Add(dr);
+                        }
+                    }
+                }
+            }
+            return (riderList);
+        }
         public void Save(DitchRider rider)
         {
-            using (SqlConnection connection = new SqlConnection (ConfigurationManager.ConnectionStrings["KIDTEMPLATE"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection (ConfigurationManager.ConnectionStrings[@"KIDTEMPLATE"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {

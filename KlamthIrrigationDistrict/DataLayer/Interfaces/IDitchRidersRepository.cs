@@ -11,6 +11,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Interfaces
     public interface IDitchRidersRepository
     {
         DitchRider Get(int id);
+        List<DitchRider> GetList();
         void Save(DitchRider rider);
     }
 }

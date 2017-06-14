@@ -16,7 +16,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
         public virtual List<CustomerHistory> GetList()
         {
             List<CustomerHistory> HistoryList = new List<CustomerHistory>();
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["KIDTEMPLATE"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"KIDTEMPLATE"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {

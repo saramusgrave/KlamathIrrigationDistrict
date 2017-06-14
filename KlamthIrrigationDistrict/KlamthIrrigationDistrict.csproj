@@ -305,7 +305,7 @@
     <Content Include="Views\DitchRider\Index.cshtml" />
     <Content Include="Views\CustomerRequest\AddRequest.cshtml" />
     <Content Include="Views\CustomerHistory\HistoryList.cshtml" />
-    <Content Include="Views\DitchRider\EditRequest.cshtml">
+    <Content Include="Views\DitchRider\Add.cshtml">
       <BrowseToURL>~/DitchRider/EditRequest</BrowseToURL>
     </Content>
     <Content Include="Views\Login\index.cshtml" />

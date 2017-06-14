@@ -78,7 +78,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
         public virtual CustomerRequest SetWaterTImes(CustomerRequest water)
         {
             CustomerRequest cr = null;
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["KIDTEMPLATE"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"KIDTEMPLATE"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
@@ -106,7 +106,7 @@ namespace KlamthIrrigationDistrict.DataLayer.Repositories
         public virtual void Save(CustomerRequest request)
         {
             //CustomerRequest cr = null;
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["KIDTEMPLATE"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"KIDTEMPLATE"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
