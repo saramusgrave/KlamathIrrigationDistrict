@@ -1,23 +1,23 @@
 ﻿@using KlamthIrrigationDistrict.DataLayer.DataModels
 @model List<DitchRider>
 @Html.ActionLink("Add Ditch Rider", "EditRequest")
-    <table>
+<table>
         <tr>
             <th>Ditch RiderID:</th>
             <th>Ditch Rider Name:</th>
             <th>Ditch Rider Phone Number:</th>
         </tr>
-        @foreach (var rider in Model)
+        @*@foreach (var rider in Model)
         {
             <tr>
                 <td>@rider.DitchRiderID</td>
-                <td>@rider.DitchRiderFirstName @rider.DitchRiderLastname</td>
+                <td>@rider.DitchRiderFirstName @rider.DitchRiderLastName</td>
                 <td>@rider.DitchRiderPhoneNumber</td>
             </tr>
-        }
-            @*<tr>
+        }*@
+            <tr>
                 <td>DitchRiderID</td>
                 <td>DitchRiderFirstName DitchRiderLastname</td>
                 <td>DitchRiderPhoneNumber</td>
-            </tr>*@
-    </table>
+            </tr>
+</table>
